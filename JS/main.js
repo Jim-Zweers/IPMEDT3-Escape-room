@@ -6,6 +6,7 @@ window.onload = () =>{
     let hold = null;
     const placeholders = document.getElementsByClassName('js--placeholder');
     let scene = document.getElementById('js--scene');
+    let place_counter = 0;
 
 
     for (let i = 0; i < places.length; i++) {
@@ -25,7 +26,6 @@ window.onload = () =>{
             if (hold == null) {
             camera.innerHTML += '<a-box id="js--hold" class="js--pickup js--interact" color="'+ this.getAttribute("color") + '" height='+ this.getAttribute("height") +' rotation="0 0 -90" position="2 -2 -4" depth="0.1">'+ this.innerHTML + '</a-box>'
             hold = "box";
-            this.remove();
             }
           });
         }
@@ -38,7 +38,7 @@ window.onload = () =>{
           if (hold == "box"){
             let heldbox = document.getElementById('js--hold')
             let box = document.createElement('a-box');
-            box.setAttribute("class", "js--pickup js--interact");
+            box.setAttribute("class", "js--pickup js--interact js--geplaatstebox");
             box.setAttribute("color", heldbox.getAttribute("color"));
             box.setAttribute("height", heldbox.getAttribute("height"));
             box.setAttribute("rotation", "0 90 -90");
@@ -49,6 +49,29 @@ window.onload = () =>{
             document.getElementById('js--hold').remove();
             addListeners();
             hold = null;
+            place_counter += 1;
+            if (place_counter >= 4){
+              let geplaatsteboxen = document.getElementsByClassName("js--geplaatstebox");
+              let eerste = geplaatsteboxen[0].childNodes[1].getAttribute("value");
+              let tweede = geplaatsteboxen[1].childNodes[1].getAttribute("value");
+              let derde = geplaatsteboxen[2].childNodes[1].getAttribute("value");
+              let vierde = geplaatsteboxen[3].childNodes[1].getAttribute("value");
+              if (eerste == "Ni" && tweede == "na" && derde == "ku" && vierde == "penda"){
+                console.log("true");
+              }
+              else{
+                place_counter = 0;
+                for(let i = 0; i < 4; i++){
+                  geplaatsteboxen[0].remove();
+                }
+                for (let i = 0; i < placeholders.length; i++){
+                  placeholders[i].setAttribute("color", "red");
+                  setTimeout(function(){
+                    placeholders[i].setAttribute("color", "gray");
+                  }, 1000)
+                }
+              }
+            }
           }
         });
       }
