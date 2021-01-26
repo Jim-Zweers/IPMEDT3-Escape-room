@@ -9,7 +9,7 @@ window.onload = () =>{
     const sound_short_beep = document.getElementById("js--sound_short_beep");
     let place_counter = 0;
 
-
+    //loopfunctie
     for (let i = 0; i < places.length; i++) {
         places[i].addEventListener('click', function(evt){
           let att = document.createAttribute("animation");
@@ -21,6 +21,7 @@ window.onload = () =>{
         });
       }
 
+      //Oppakfunctie voor puzzel 5
       function addListeners(){
         for (let i = 0; i < pickups.length; i++){
           pickups[i].addEventListener('click', function(evt){
@@ -33,7 +34,8 @@ window.onload = () =>{
       }
     
       addListeners()
-    
+      
+      //Plaats functie voor puzzel 5
       for (let i = 0; i < placeholders.length; i++){
         placeholders[i].addEventListener('click', function(evt){
           if (hold == "box"){
