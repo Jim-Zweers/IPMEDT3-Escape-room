@@ -7,7 +7,7 @@
     <title>Escape room</title>
 </head>
 <body>
-    <a-scene>
+    <a-scene id="js--scene">
         <a-assets>
             <a-asset-item id="whiteboard-obj" src="BLENDER_FILES/Whiteboard.obj"></a-asset-item>
             <a-asset-item id="whiteboard-mtl" src="BLENDER_FILES/Whiteboard.mtl"></a-asset-item>
@@ -15,7 +15,7 @@
             <a-asset-item id="laptop-mtl" src="BLENDER_FILES/Laptop.mtl"></a-asset-item>
         </a-assets>
 
-        <a-camera id="js--camera" position="0 6 0" wasd-controls="acceleration: 1000">
+        <a-camera id="js--camera" position="1 6 -22.8" wasd-controls="acceleration: 1000">
             <a-entity
             animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
             animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -29,22 +29,93 @@
             ></a-entity>
         </a-camera>
 
+        <!-- Puzzel 5 -->
+        <a-box class="js--pickup js--interact" color="yellow" position="-5.2 2.4 -15.6" rotation="-90 0 0" depth="0.1">
+            <a-text value="Ni" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#00fff0" position="-5.2 2.4 -16.8" rotation="-90 0 0" depth="0.1">
+            <a-text value="me" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#006400" position="-5.2 2.4 -18" rotation="-90 0 0" depth="0.1">
+            <a-text value="lala" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-text value="ik-voltooid-slapen" color="black" position="-4.4 2.4 -16.8" rotation="-90 90 0" width="7" align="center"></a-text>
+        <a-text value="Ik heb geslapen" color="black" position="-3.95 2.4 -16.8" rotation="-90 90 0" width="7" align="center"></a-text>
+
+        <a-box class="js--pickup js--interact" color="yellow" position="-3.1 2.4 -15" rotation="-90 0 0" depth="0.1">
+            <a-text value="Al" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#00fff0" position="-3.1 2.4 -16.2" rotation="-90 0 0" depth="0.1">
+            <a-text value="li" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#6930c3" position="-3.1 2.4 -17.4" rotation="-90 0 0" depth="0.1">
+            <a-text value="ku" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#006400" position="-3.1 2.4 -18.6" rotation="-90 0 0" depth="0.1">
+            <a-text value="ona" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-text value="hij/zij-toen-jou-zien" color="black" position="-2.3 2.4 -16.8" rotation="-90 90 0" width="7" align="center"></a-text>
+        <a-text value="Hij/zij zag jou" color="black" position="-1.85 2.4 -16.8" rotation="-90 90 0" width="7" align="center"></a-text>
+
+        <a-box class="js--pickup js--interact" color="yellow" position="-5.2 2.4 -21" rotation="-90 0 0" depth="0.1">
+            <a-text value="A" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#00fff0" position="-5.2 2.4 -22.2" rotation="-90 0 0" depth="0.1">
+            <a-text value="li" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#6930c3" position="-5.2 2.4 -23.4" rotation="-90 0 0" depth="0.1">
+            <a-text value="tu" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#006400" position="-5.2 2.4 -24.8" rotation="-90 0 0" depth="0.1" height="1.3">
+            <a-text value="sikia" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-text value="hij/zij-toen-ons-horen" color="black" position="-4.4 2.4 -22.8" rotation="-90 90 0" width="7" align="center"></a-text>
+        <a-text value="Hij/zij hoorde ons" color="black" position="-3.95 2.4 -22.8" rotation="-90 90 0" width="7" align="center"></a-text>
+
+        <a-box class="js--pickup js--interact" color="yellow" position="-3.1 2.4 -21.6" rotation="-90 0 0" depth="0.1">
+            <a-text value="Tu" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#00fff0" position="-3.1 2.4 -22.8" rotation="-90 0 0" depth="0.1">
+            <a-text value="na" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#006400" position="-3.1 2.4 -24.2" rotation="-90 0 0" depth="0.1" height="1.4">
+            <a-text value="soma" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-text value="wij-nu-lezen" color="black" position="-2.3 2.4 -22.8" rotation="-90 90 0" width="7" align="center"></a-text>
+        <a-text value="Wij lezen" color="black" position="-1.85 2.4 -22.8" rotation="-90 90 0" width="7" align="center"></a-text>
+
+        <a-box class="js--pickup js--interact" color="yellow" position="-4.15 2.4 -27.2" rotation="-90 0 0" depth="0.1">
+            <a-text value="Wa" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#00fff0" position="-4.15 2.4 -28.4" rotation="-90 0 0" depth="0.1">
+            <a-text value="ta" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-box class="js--pickup js--interact" color="#006400" position="-4.15 2.4 -29.9" rotation="-90 0 0" depth="0.1" height="1.6">
+            <a-text value="penda" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
+        </a-box>
+        <a-text value="zij-toekomstig-houden-van-leeuw " color="black" position="-3.25 2.4 -28.4" rotation="-90 90 0" width="7" align="center"></a-text>
+        <a-text value="Zij zullen van de leeuw houden" color="black" position="-2.8 2.4 -28.4" rotation="-90 90 0" width="7" align="center"></a-text>
+
+        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -21"></a-box>
+        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -22.2"></a-box>
+        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -23.4"></a-box>
+        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -24.6"></a-box>
+
+
+        <!-- Scene -->
         <a-obj-model src="#whiteboard-obj" mtl="#whiteboard-mtl" position="13 -8 -44.3" rotation="0 -90 0" scale="4 4 4"></a-obj-model>
-
         <a-obj-model src="#laptop-obj" mtl="#laptop-mtl" position="12.5 2.85 -20" rotation="0 -90 0" scale="11 11 11"></a-obj-model>
-
         <a-gltf-model src="BLENDER_FILES/koelkast.glb" position="-3 -5 -40.8" rotation="" scale="3.3 3.3 3.3"></a-gltf-model>
-
         <a-box height="0" width="5" depth="30" position="-4 1.8 -22.5" color="#3d2d20"></a-box>
         <a-cylinder position="-3.6 -1.8 -8.6" height="8" width="0.5" color="#808080"></a-cylinder>
-
         <a-gltf-model src="BLENDER_FILES/table.glb" position="12.5 -3 -12" scale="2 2 2" rotation="0 -90 0"></a-gltf-model>
-
         <a-gltf-model src="BLENDER_FILES/Cabin.glb" position="6.5 -15 -20" rotation="0 -90 0"></a-gltf-model>
 
+
+        <!-- Teleportatie -->
         <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="0 -3 0"></a-cylinder>
         <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="5 -3 -12"></a-cylinder>
-        <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="1 -3 -22"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="1 -3 -22.8"></a-cylinder>
         <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="6.5 -3 -40.8"></a-cylinder>
         <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="12.5 -3 -28"></a-cylinder>
         <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="20 -3 -35"></a-cylinder>
