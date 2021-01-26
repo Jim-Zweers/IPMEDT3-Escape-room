@@ -6,6 +6,7 @@ window.onload = () =>{
     let hold = null;
     const placeholders = document.getElementsByClassName('js--placeholder');
     let scene = document.getElementById('js--scene');
+    const sound_short_beep = document.getElementById("js--sound_short_beep");
     let place_counter = 0;
 
 
@@ -57,7 +58,16 @@ window.onload = () =>{
               let derde = geplaatsteboxen[2].childNodes[1].getAttribute("value");
               let vierde = geplaatsteboxen[3].childNodes[1].getAttribute("value");
               if (eerste == "Ni" && tweede == "na" && derde == "ku" && vierde == "penda"){
-                console.log("true");
+                for(let i = 0; i < 4; i++){
+                  geplaatsteboxen[0].remove();
+                }
+                sound_short_beep.components.sound.playSound();
+                for (let i = 0; i < placeholders.length; i++){
+                  placeholders[i].setAttribute("color", "green");
+                  setTimeout(function(){
+                    placeholders[i].setAttribute("color", "gray");
+                  }, 1000)
+                }
               }
               else{
                 place_counter = 0;
