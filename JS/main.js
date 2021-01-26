@@ -5,6 +5,8 @@ window.onload = () =>{
     const pickups = document.getElementsByClassName('js--pickup');
     let hold = null;
     const placeholders = document.getElementsByClassName('js--placeholder');
+    const placeholders_talen = document.getElementsByClassName('js--placeholder_talen');
+    const talen = document.getElementsByClassName('js--talen');
     let scene = document.getElementById('js--scene');
     const sound_short_beep = document.getElementById("js--sound_short_beep");
     let place_counter = 0;
