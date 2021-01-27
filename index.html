@@ -4,7 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="JS/main.js"></script>
-    <script src="JS/puzzel_1_5.js"></script>
     <title>Escape room</title>
 </head>
 <body>
@@ -26,7 +25,7 @@
 
         <a-entity id="js--sound_short_beep" sound="src: #short_beep; positional: false; volume: 0.2"></a-entity>
 
-        <a-camera id="js--camera" position="7 6 -12" wasd-controls="acceleration: 1000">
+        <a-camera id="js--camera" position="12.5 6 -28" wasd-controls="acceleration: 1000">
             <a-entity
             animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
             animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -39,6 +38,49 @@
             id="js--cursor"
             ></a-entity>
         </a-camera>
+
+        <!-- Puzzel 2 -->
+            <!-- Play knoppen -->
+        <a-box position="8 9 -44.5" color="#00af91">
+            <a-text value="Play Changana" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        </a-box>
+        <a-box position="8 7.5 -44.5" color="#00af91">
+            <a-text value="Play Berber" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        </a-box>
+        <a-box position="8 6 -44.5" color="#00af91">
+            <a-text value="Play Ewe" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        </a-box>
+        <a-box position="8 4.5 -44.5" color="#00af91">
+            <a-text value="Play Egyptisch Arabisch" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        </a-box>
+
+            <!-- Beginpunten -->
+        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="9 9 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="9 7.5 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="9 6 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="9 4.5 -44.5" radius="0.5"></a-sphere>
+
+            <!-- Talenkaarten -->
+        <a-box position="17.5 9 -44.5" color="#00af91" width="2">
+            <a-text value="Ewe" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        </a-box>
+        <a-box position="17.5 7.5 -44.5" color="#00af91" width="2">
+            <a-text value="Changana" color="black" align="center" position="0 0 0.6" width="9"></a-text>
+        </a-box>
+        <a-box position="17.5 6 -44.5" color="#00af91" width="2">
+            <a-text value="Berber" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        </a-box>
+        <a-box position="17.5 4.5 -44.5" color="#00af91" width="2">
+            <a-text value="Egyptisch Arabisch" color="black" align="center" position="0 0 0.6" width="5"></a-text>
+        </a-box>
+
+            <!-- Eindpunten -->
+        <a-sphere class="js--eindpunt js--interact" color="#ec4646" position="16 9 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--eindpunt js--interact" color="#ec4646" position="16 7.5 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--eindpunt js--interact" color="#ec4646" position="16 6 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--eindpunt js--interact" color="#ec4646" position="16 4.5 -44.5" radius="0.5"></a-sphere>
+
+            <!-- Voorbeeld lijn -->
 
         <!-- Puzzel 3 -->
             <!-- Schriften -->
