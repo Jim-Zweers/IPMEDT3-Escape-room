@@ -19,6 +19,7 @@
             <img id="image_arabisch" src="IMG/Arabisch.png">
             <img id="image_geez" src="IMG/Geez.png">
             <img id="image_vai" src="IMG/Vai.png">
+            <img id="image_professor" src="IMG/Professor.png">
 
             <audio id="short_beep" src="SOUNDS/Beep Short .mp3" preload="auto" ></audio>
             <audio id="ewe_sound_1" src="SOUNDS/Ewe sound 1.mp3" preload="auto"></audio>
@@ -33,7 +34,8 @@
         <a-entity id="js--ea_sound_1" sound="src: #ea_sound_1; positional: false; volume: 0.4"></a-entity>
         <a-entity id="js--ea_sound_2" sound="src: #ea_sound_2; positional: false; volume: 0.4"></a-entity>
 
-        <a-camera id="js--camera" position="12.5 6 -28" wasd-controls="acceleration: 1000">
+
+        <a-camera id="js--camera" position="0 6 0" wasd-controls="acceleration: 1000">
             <a-entity
             animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
             animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 2000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -45,7 +47,14 @@
             raycaster = "objects: .js--interact"
             id="js--cursor"
             ></a-entity>
+            <a-plane position="6.2 2.7 -4">
+                <a-image src="#image_professor"></a-image>
+            </a-plane>
         </a-camera>
+
+
+        <a-sphere hints class="js--interact" position="12.5 6 4" color="red" radius="3"></a-sphere>
+
 
         <!-- Puzzel 2 -->
             <!-- Play knoppen -->

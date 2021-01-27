@@ -17,6 +17,7 @@ window.onload = () =>{
     let x = null;
     let y = null;
     let lijne_array = [];
+    let tekst = null;
 
     const ewe_sound_1 = document.getElementById("js--ewe_sound_1");
     const sound_short_beep = document.getElementById("js--sound_short_beep");
@@ -270,4 +271,53 @@ window.onload = () =>{
     } 
   
     addListenersFragmenten() 
+
+
+    //hintsysteem component
+AFRAME.registerComponent("hints", {
+  init: function(){
+
+    this.newHint = function(){
+      let z = camera.getAttribute("position").z;
+      //weetje
+      if(z == 0){
+        tekst = "Dit is een test"
+      }
+      if(z == -12){
+
+      }
+      if(z == -22.8){
+
+      }
+      if(z == -40.8){
+
+      }
+      if(z == -28){
+
+      }
+      //weetje
+      if(z == -35){
+
+      }
+      //weetje
+      if(z == -6){
+
+      }
+      camera.innerHTML += '<a-plane id="js--tekst_paneel" position="3.6 2.7 -4" width="4"><a-text value="'+ tekst +'" color="black" align="center" width="3.5" height="2"></a-text>';
+      setTimeout(function(){
+        document.getElementById("js--tekst_paneel").remove();
+      }, 8000)
+    }
+    this.el.addEventListener("click", this.newHint)
+  },
+  update: function() {
+    console.log("update");
+  },
+  tick: function() {},
+  remove: function() {},
+  pause: function() {},
+  play: function() {}
+})
 }
+
+
