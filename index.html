@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="JS/main.js"></script>
+    <script src="JS/puzzel_1_5.js"></script>
     <title>Escape room</title>
 </head>
 <body>
@@ -65,23 +66,29 @@
         <a-box class="js--placeholder_talen js--interact" color="gray" position="9 2.7 -12" rotation="-90 0 0" depth="0.1" height="2"></a-box>
 
             <!-- Talen die kunnen worden opgepakt -->
-        <a-box class="js--talen js--interact" position="15 2.7 -9" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
+        <a-box class="js--talen js--interact" color="#ec4646" position="15 2.7 -9" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
             <a-text value="Arabisch" color="black" align="center" rotation="0 0 -90" position="0 0 0.07" width="8"></a-text>
         </a-box>
-        <a-box class="js--talen js--interact" position="13.5 2.7 -9" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
+        <a-box class="js--talen js--interact" color="#1687a7" position="13.5 2.7 -9" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
             <a-text value="Ge'ez" color="black" align="center" rotation="0 0 -90" position="0 0 0.07" width="8"></a-text>
         </a-box>
-        <a-box class="js--talen js--interact" position="13.5 2.7 -6" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
+        <a-box class="js--talen js--interact" color="#6930c3" position="13.5 2.7 -6" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
             <a-text value="Vai" color="black" align="center" rotation="0 0 -90" position="0 0 0.07" width="8"></a-text>
         </a-box>
-        <a-box class="js--talen js--interact" position="15 2.7 -6" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
+        <a-box class="js--talen js--interact" color="#ffe227" position="15 2.7 -6" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
             <a-text value="Oud-Egyptisch" color="black" align="center" rotation="0 0 -90" position="0 0 0.07" width="5"></a-text>
         </a-box>
-        <a-box class="js--talen js--interact" position="12 2.7 -7.5" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
+        <a-box class="js--talen js--interact" color="#007965" position="12 2.7 -7.5" rotation="-90 0 0" depth="0.1" height="1.7" width="0.8">
             <a-text value="Berber" color="black" align="center" rotation="0 0 -90" position="0 0 0.07" width="8"></a-text>
         </a-box>
 
+            <!-- Uitleg -->
+        <a-plane position="9.5 2.7 -7.5" rotation="-90 -90 0" height="2.5" width="5">
+            <a-text value="Hoe veel schriften zijn er op de wereld? In Europa is er bijvoorbeeld het Latijnse alfabet, geschikt voor allerlei verschillende talen. Maar in Afrika gaat het net even anders: sommige Afrikaanse talen hebben hun eigen schrift, dat je voor geen enkele andere taal kunt gebruiken. Kijk maar naar de volgende vijf talen. Maar welk schrift hoort bij welke taal?" color="black" align="center" rotation="0 0 0" position="0 0 0.07" width="4.5"></a-text>
+        </a-plane>
+
         <!-- Puzzel 5 -->
+            <!-- klanken die kunnen worden opgepakt -->
         <a-box class="js--pickup js--interact" color="yellow" position="-5.2 2.4 -15.6" rotation="-90 0 0" depth="0.1">
             <a-text value="Ni" color="black" align="center" rotation="0 0 90" width="12" position="0 0 0.1"></a-text>
         </a-box>
@@ -148,11 +155,13 @@
         <a-text value="zij-toekomstig-houden-van-leeuw " color="black" position="-3.25 2.4 -28.4" rotation="-90 90 0" width="7" align="center"></a-text>
         <a-text value="Zij zullen van de leeuw houden" color="black" position="-2.8 2.4 -28.4" rotation="-90 90 0" width="7" align="center"></a-text>
 
-        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -21"></a-box>
-        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -22.2"></a-box>
-        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -23.4"></a-box>
-        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -24.6"></a-box>
-
+            <!-- placeholders -->
+        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -19.8"></a-box>
+        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -21.8"></a-box>
+        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -23.8"></a-box>
+        <a-box class="js--placeholder js--interact" color="gray" position="-6.5 4.5 -25.8"></a-box>
+        -3.1 2.4 -22.8
+            <!-- uitleg -->
         <a-box color="white" position="-6.5 10 -22.8" height="6" depth="10">
             <a-text value="In het Swahili (gesproken in Tanzania) kun je in één woord hetzelfde zeggen als waar we in het Nederlands maar liefst drie woorden voor nodig hebben! Deze taal is een meester in het gebruiken van voorvoegsels, bijvoorbeeld voor het onderwerp, het lijdend voorwerp en de verleden of tegenwoordige tijd. Hoe zeg je in het Swahili “ik houd van jou”?" color="black" align="center" rotation="0 90 0" position="0.5 0 0" width="9"></a-text>
         </a-box>
