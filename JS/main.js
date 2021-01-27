@@ -23,18 +23,19 @@ window.onload = () =>{
         });
       }
 
-      function addListeners(){
+      function addListeners5(){
         for (let i = 0; i < pickups.length; i++){
           pickups[i].addEventListener('click', function(evt){
             if (hold == null) {
             camera.innerHTML += '<a-box id="js--hold" class="js--pickup js--interact" color="'+ this.getAttribute("color") + '" height='+ this.getAttribute("height") +' rotation="0 0 -90" position="2 -2 -4" depth="0.1">'+ this.innerHTML + '</a-box>'
             hold = "box";
+            console.log("true");
             }
           });
         }
       }
     
-      addListeners()
+      addListeners5()
     
       for (let i = 0; i < placeholders.length; i++){
         placeholders[i].addEventListener('click', function(evt){
@@ -89,7 +90,7 @@ window.onload = () =>{
       }
 
       //puzzel 1 pickup systeem
-      function addListeners(){
+      function addListeners1(){
         for (let i = 0; i < talen.length; i++){
           talen[i].addEventListener('click', function(evt){
             if (hold == null) {
@@ -101,7 +102,7 @@ window.onload = () =>{
         }
       }
     
-      addListeners()
+      addListeners1()
 
       //puzzel 1 plaatsing systeem
       for (let i = 0; i < placeholders_talen.length; i++){
