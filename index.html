@@ -21,9 +21,17 @@
             <img id="image_vai" src="IMG/Vai.png">
 
             <audio id="short_beep" src="SOUNDS/Beep Short .mp3" preload="auto" ></audio>
+            <audio id="ewe_sound_1" src="SOUNDS/Ewe sound 1.mp3" preload="auto"></audio>
+            <audio id="ewe_sound_2" src="SOUNDS/Ewe sound 2.mp3" preload="auto"></audio>
+            <audio id="ea_sound_1" src="SOUNDS/Egyptisch sound 1.mp3" preload="auto"></audio>
+            <audio id="ea_sound_2" src="SOUNDS/Egyptisch sound 2.mp3" preload="auto"></audio>
         </a-assets>
 
         <a-entity id="js--sound_short_beep" sound="src: #short_beep; positional: false; volume: 0.2"></a-entity>
+        <a-entity id="js--ewe_sound_1" sound="src: #ewe_sound_1; positional: false; volume: 0.4"></a-entity>
+        <a-entity id="js--ewe_sound_2" sound="src: #ewe_sound_2; positional: false; volume: 0.4"></a-entity>
+        <a-entity id="js--ea_sound_1" sound="src: #ea_sound_1; positional: false; volume: 0.4"></a-entity>
+        <a-entity id="js--ea_sound_2" sound="src: #ea_sound_2; positional: false; volume: 0.4"></a-entity>
 
         <a-camera id="js--camera" position="12.5 6 -28" wasd-controls="acceleration: 1000">
             <a-entity
@@ -41,37 +49,37 @@
 
         <!-- Puzzel 2 -->
             <!-- Play knoppen -->
-        <a-box position="8 9 -44.5" color="#00af91">
-            <a-text value="Play Changana" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        <a-box class="js--fragment js--interact" position="9 9 -44.5" color="#00af91" width="3">
+            <a-text value="Speel Changana" color="black" align="center" position="0 0 0.6" width="8"></a-text>
         </a-box>
-        <a-box position="8 7.5 -44.5" color="#00af91">
-            <a-text value="Play Berber" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        <a-box class="js--fragment js--interact" position="9 7.5 -44.5" color="#00af91" width="3">
+            <a-text value="Speel Berber" color="black" align="center" position="0 0 0.6" width="8"></a-text>
         </a-box>
-        <a-box position="8 6 -44.5" color="#00af91">
-            <a-text value="Play Ewe" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        <a-box class="js--fragment js--interact" position="9 6 -44.5" color="#00af91" width="3">
+            <a-text value="Speel Ewe" color="black" align="center" position="0 0 0.6" width="8"></a-text>
         </a-box>
-        <a-box position="8 4.5 -44.5" color="#00af91">
-            <a-text value="Play Egyptisch Arabisch" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        <a-box class="js--fragment js--interact" position="9 4.5 -44.5" color="#00af91" width="3">
+            <a-text value="Speel Egyptisch Arabisch" color="black" align="center" position="0 0 0.6" width="5.7"></a-text>
         </a-box>
 
             <!-- Beginpunten -->
-        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="9 9 -44.5" radius="0.5"></a-sphere>
-        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="9 7.5 -44.5" radius="0.5"></a-sphere>
-        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="9 6 -44.5" radius="0.5"></a-sphere>
-        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="9 4.5 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="11 9 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="11 7.5 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="11 6 -44.5" radius="0.5"></a-sphere>
+        <a-sphere class="js--beginpunt js--interact" color="#ec4646" position="11 4.5 -44.5" radius="0.5"></a-sphere>
 
-            <!-- Talenkaarten -->
-        <a-box position="17.5 9 -44.5" color="#00af91" width="2">
-            <a-text value="Ewe" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+            <!-- Play knoppen -->
+        <a-box class="js--fragment js--interact" position="17.5 9 -44.5" color="#00af91" width="2">
+            <a-text value="Speel" color="black" align="center" position="0 0 0.6" width="10"></a-text>
         </a-box>
-        <a-box position="17.5 7.5 -44.5" color="#00af91" width="2">
-            <a-text value="Changana" color="black" align="center" position="0 0 0.6" width="9"></a-text>
+        <a-box class="js--fragment js--interact" position="17.5 7.5 -44.5" color="#00af91" width="2">
+            <a-text value="Speel" color="black" align="center" position="0 0 0.6" width="10"></a-text>
         </a-box>
-        <a-box position="17.5 6 -44.5" color="#00af91" width="2">
-            <a-text value="Berber" color="black" align="center" position="0 0 0.6" width="10"></a-text>
+        <a-box class="js--fragment js--interact" position="17.5 6 -44.5" color="#00af91" width="2">
+            <a-text value="Speel" color="black" align="center" position="0 0 0.6" width="10"></a-text>
         </a-box>
-        <a-box position="17.5 4.5 -44.5" color="#00af91" width="2">
-            <a-text value="Egyptisch Arabisch" color="black" align="center" position="0 0 0.6" width="5"></a-text>
+        <a-box class="js--fragment js--interact" position="17.5 4.5 -44.5" color="#00af91" width="2">
+            <a-text value="Speel" color="black" align="center" position="0 0 0.6" width="10"></a-text>
         </a-box>
 
             <!-- Eindpunten -->

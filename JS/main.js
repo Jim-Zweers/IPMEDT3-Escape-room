@@ -6,9 +6,9 @@ window.onload = () =>{
     const placeholders = document.getElementsByClassName('js--placeholder');
     const placeholders_talen = document.getElementsByClassName('js--placeholder_talen');
     const talen = document.getElementsByClassName('js--talen');
-    const sound_short_beep = document.getElementById("js--sound_short_beep");
     const beginpunten = document.getElementsByClassName("js--beginpunt");
     const eindpunten = document.getElementsByClassName("js--eindpunt");
+    const fragmenten = document.getElementsByClassName("js--fragment");
     let place_counter = 0;
     let place_counter_talen = 0;
     let lijnen_counter = 0;
@@ -17,6 +17,12 @@ window.onload = () =>{
     let x = null;
     let y = null;
     let lijne_array = [];
+
+    const ewe_sound_1 = document.getElementById("js--ewe_sound_1");
+    const sound_short_beep = document.getElementById("js--sound_short_beep");
+    const ewe_sound_2 = document.getElementById("js--ewe_sound_2");
+    const ea_sound_1 = document.getElementById("js--ea_sound_1");
+    const ea_sound_2 = document.getElementById("js--ea_sound_2");
 
     //loopfunctie
     for (let i = 0; i < places.length; i++) {
@@ -211,6 +217,12 @@ window.onload = () =>{
                         for(let i = 0; i < 4; i++){
                           geplaatste_lijnen[0].remove();
                         }
+                        for (let i = 0; i <fragmenten.length; i++){
+                          fragmenten[i].setAttribute("color", "red");
+                          setTimeout(function(){
+                            fragmenten[i].setAttribute("color", "#00af91");
+                          }, 1000)
+                        }
                       }
                     }
                 }
@@ -226,4 +238,36 @@ window.onload = () =>{
     addListenersEindpunten()
     addListenersBeginpunten()
     
+    function addListenersFragmenten(){
+      for (let i = 0; i < fragmenten.length; i++){
+          fragmenten[i].addEventListener('click', function(evt){
+            if(i == 0){
+              sound_short_beep.components.sound.playSound();
+            }
+            if(i == 1){
+
+            }
+            if(i == 2){
+              ewe_sound_1.components.sound.playSound();
+            }
+            if(i == 3){
+              ea_sound_1.components.sound.playSound();
+            }
+            if(i == 4){
+              ewe_sound_2.components.sound.playSound();
+            }
+            if(i == 5){
+
+            }
+            if(i == 6){
+
+            }
+            if(i == 7){
+              ea_sound_2.components.sound.playSound();
+            }
+          });
+      }
+    } 
+  
+    addListenersFragmenten() 
 }
