@@ -328,7 +328,7 @@ window.onload = () =>{
     //hintsysteem component
     AFRAME.registerComponent("hints", {
       init: function(){
-        camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" width="0.4" height="0.13"><a-text value="Hallo, ik ben je collega en wij zijn hier gestrand, omdat jij bent gestruikeld. Los de puzzels op zodat je een SOS kan sturen via de computer. Als je me nodig hebt sta ik hier rechts naast je" color="black" align="center" width="0.39" height="2"></a-text>';
+        camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" width="0.4" height="0.13"><a-text value="Hallo, ik ben je buddy en wij zijn hier gestrand, omdat jij bent gestruikeld. Los de puzzels op zodat je een SOS kan sturen via de computer. Als je me nodig hebt sta ik hier rechts naast je. Owwhh ja en als je wilt lopen moet je even kijken naar de rondjes op de grond. Om iets op te pakken moet je er ook naar kijken" color="black" align="center" width="0.37" height="2"></a-text>';
         setTimeout(function(){
           document.getElementById("js--tekst_paneel").remove();
         }, 15000)
