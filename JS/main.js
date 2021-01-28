@@ -9,9 +9,12 @@ window.onload = () =>{
     const beginpunten = document.getElementsByClassName("js--beginpunt");
     const eindpunten = document.getElementsByClassName("js--eindpunt");
     const fragmenten = document.getElementsByClassName("js--fragment");
+    const letters = document.getElementsByClassName("js--letter");
+    const letter_placeholders = document.getElementsByClassName("js--letter_placeholder");
     let place_counter = 0;
     let place_counter_talen = 0;
     let lijnen_counter = 0;
+    let letter_counter = 0;
     let hold = null;
     let scene = document.getElementById('js--scene');
     let x = null;
@@ -277,7 +280,6 @@ window.onload = () =>{
     //hintsysteem component
     AFRAME.registerComponent("hints", {
       init: function(){
-
         camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" width="0.4" height="0.13"><a-text value="Hallo, ik ben je collega en wij zijn hier gestrand, omdat jij bent gestruikeld. Los de puzzels op zodat je een SOS kan sturen via de computer. Als je me nodig hebt sta ik hier rechts naast je" color="black" align="center" width="0.39" height="2"></a-text>';
         setTimeout(function(){
           document.getElementById("js--tekst_paneel").remove();
@@ -300,7 +302,7 @@ window.onload = () =>{
             breedte = 0.4
           }
           if(z == -40.8){
-            tekst = ""
+            tekst = "In het Frans tel je op, maar hier trek je af. PS kijk even goed naar 20 en 16."
             breedte = 0.4
           }
           if(z == -28){
@@ -333,7 +335,66 @@ window.onload = () =>{
       play: function() {}
     })
 
+    
+    //inlogsysteem oppakken
+    function addListenersLetters(){
+      for (let i = 0; i < letters.length; i++){
+        letters[i].addEventListener('click', function(evt){
+          if (hold == null) {
+          camera.innerHTML += '<a-box id="js--hold" class="js--letter js--interact" color="'+ this.getAttribute("color") + '" height="1" width="1" rotation="0 180 0" position="2 -2 -4" depth="0.1">'+ this.innerHTML + '</a-box>'
+          hold = "box";
+          }
+        });
+      }
+    }
 
+    addListenersLetters()
+
+    //inlogsysteem plaatsen
+    for (let i = 0; i < letter_placeholders.length; i++){
+      letter_placeholders[i].addEventListener('click', function(evt){
+        if (hold == "box"){
+          let heldbox = document.getElementById('js--hold');
+          let box = document.createElement('a-box');
+          box.setAttribute("class", "js--letter js--interact js--geplaatsteletter");
+          box.setAttribute("height", "0.3");
+          box.setAttribute("width", "0.3");
+          box.setAttribute("depth", "0.2");
+          box.setAttribute("rotation", "0 0 0");
+          box.setAttribute("color", heldbox.getAttribute("color"));
+          box.innerHTML += heldbox.innerHTML;
+          box.setAttribute("position", {x: this.getAttribute('position').x, y: this.getAttribute('position').y, z: this.getAttribute('position').z});
+          scene.appendChild(box);
+          document.getElementById('js--hold').remove();
+          addListenersLetters();
+          hold = null;
+          letter_counter += 1;
+          if (letter_counter >= 5){
+            let geplaatsteletters = document.getElementsByClassName("js--geplaatsteletter");
+            let eerste = geplaatsteletters[0].childNodes[1].getAttribute("value");
+            let tweede = geplaatsteletters[1].childNodes[1].getAttribute("value");
+            let derde = geplaatsteletters[2].childNodes[1].getAttribute("value");
+            let vierde = geplaatsteletters[3].childNodes[1].getAttribute("value");
+            let vijfde = geplaatsteletters[4].childNodes[1].getAttribute("value");
+            if (eerste == "N" && tweede == "A" && derde == "C" && vierde == "H" && vijfde == "T" ){
+              console.log("true");
+            }
+            else{
+              letter_counter = 0;
+              for(let i = 0; i < 5; i++){
+                geplaatsteletters[0].remove();
+              }
+              for (let i = 0; i < letter_placeholders.length; i++){
+                letter_placeholders[i].setAttribute("color", "red");
+                setTimeout(function(){
+                  letter_placeholders[i].setAttribute("color", "gray");
+                }, 1000)
+              }
+            }
+          }
+        }
+      });
+    }
     //Puzzel 3
     const notes = document.getElementsByClassName("js--note");
     let j = 0;
@@ -398,8 +459,8 @@ window.onload = () =>{
           sound_short_beep.components.sound.playSound();
         }
 
-    });
-}
+      });
+    }
 
 
 }
