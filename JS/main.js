@@ -28,6 +28,13 @@ window.onload = () =>{
     const ewe_sound_2 = document.getElementById("js--ewe_sound_2");
     const ea_sound_1 = document.getElementById("js--ea_sound_1");
     const ea_sound_2 = document.getElementById("js--ea_sound_2");
+    const chan_sound_1 = document.getElementById("js--chan_sound_1");
+    const chan_sound_2 = document.getElementById("js--chan_sound_2");
+    const berber_sound_1 = document.getElementById("js--berber_sound_11");
+    const berber_sound_2 = document.getElementById("js--berber_sound_12");
+    const berber_sound_3 = document.getElementById("js--berber_sound_21");
+    const berber_sound_4 = document.getElementById("js--berber_sound_22");
+
 
     //loopfunctie
     for (let i = 0; i < places.length; i++) {
@@ -276,14 +283,18 @@ window.onload = () =>{
     addListenersEindpunten()
     addListenersBeginpunten()
     
+    //afspelen van de fragmenten
     function addListenersFragmenten(){
       for (let i = 0; i < fragmenten.length; i++){
           fragmenten[i].addEventListener('click', function(evt){
             if(i == 0){
-              sound_short_beep.components.sound.playSound();
+              chan_sound_1.components.sound.playSound();
             }
             if(i == 1){
-
+              berber_sound_1.components.sound.playSound();
+              setTimeout(function(){
+                berber_sound_2.components.sound.playSound();
+              }, 200)
             }
             if(i == 2){
               ewe_sound_1.components.sound.playSound();
@@ -295,10 +306,13 @@ window.onload = () =>{
               ewe_sound_2.components.sound.playSound();
             }
             if(i == 5){
-
+              chan_sound_2.components.sound.playSound();
             }
             if(i == 6){
-
+              berber_sound_3.components.sound.playSound();
+              setTimeout(function(){
+                berber_sound_4.components.sound.playSound();
+              }, 300)
             }
             if(i == 7){
               ea_sound_2.components.sound.playSound();
