@@ -9,8 +9,8 @@ window.onload = () =>{
     const beginpunten = document.getElementsByClassName("js--beginpunt");
     const eindpunten = document.getElementsByClassName("js--eindpunt");
     const fragmenten = document.getElementsByClassName("js--fragment");
-    const letters = document.getElementsByClassName("js--letter");
     const letter_placeholders = document.getElementsByClassName("js--letter_placeholder");
+    let letters = document.getElementsByClassName("js--letter");
     let place_counter = 0;
     let place_counter_talen = 0;
     let lijnen_counter = 0;
@@ -91,6 +91,17 @@ window.onload = () =>{
                     placeholders[i].setAttribute("color", "gray");
                   }, 1000)
                 }
+                let letter_h = document.createElement('a-box');
+                letter_h.setAttribute("class", "js--letter js--interact");
+                letter_h.setAttribute("color", "#ec4646");
+                letter_h.setAttribute("height", "0.3");
+                letter_h.setAttribute("width", "0.3");
+                letter_h.setAttribute("depth", "0.2");
+                letter_h.setAttribute("position", "11.75 3.5 -18.6");
+                letter_h.innerHTML += '<a-text value="H" color="black" align="center" position="0 0 -0.11" rotation="0 -180 0" width="8"></a-text>';
+                scene.appendChild(letter_h);
+                letters = document.getElementsByClassName("js--letter");
+                addListenersLetters();
               }
               else{
                 place_counter = 0;
@@ -155,6 +166,17 @@ window.onload = () =>{
                 for (let i = 0; i < placeholders_talen.length; i++){
                   placeholders_talen[i].setAttribute("color", "green");
                 }
+                let letter_a = document.createElement('a-box');
+                letter_a.setAttribute("class", "js--letter js--interact");
+                letter_a.setAttribute("color", "#00fff0");
+                letter_a.setAttribute("height", "0.3");
+                letter_a.setAttribute("width", "0.3");
+                letter_a.setAttribute("depth", "0.2");
+                letter_a.setAttribute("position", "14 3.5 -18.6");
+                letter_a.innerHTML += '<a-text value="A" color="black" align="center" position="0 0 -0.11" rotation="0 -180 0" width="8"></a-text>';
+                scene.appendChild(letter_a);
+                letters = document.getElementsByClassName("js--letter");
+                addListenersLetters();
               }
               else{
                 place_counter_talen = 0;
@@ -212,8 +234,18 @@ window.onload = () =>{
                         for (let i = 0; i <beginpunten.length; i++){
                           beginpunten[i].setAttribute("color", "green");
                           eindpunten[i].setAttribute("color", "green");
-                          
                         }
+                        let letter_c = document.createElement('a-box');
+                        letter_c.setAttribute("class", "js--letter js--interact");
+                        letter_c.setAttribute("color", "#75cfb8");
+                        letter_c.setAttribute("height", "0.3");
+                        letter_c.setAttribute("width", "0.3");
+                        letter_c.setAttribute("depth", "0.2");
+                        letter_c.setAttribute("position", "11 3.5 -18.6");
+                        letter_c.innerHTML += '<a-text value="C" color="black" align="center" position="0 0 -0.11" rotation="0 -180 0" width="8"></a-text>';
+                        scene.appendChild(letter_c);
+                        letters = document.getElementsByClassName("js--letter");
+                        addListenersLetters();
                       }
                       else{
                         console.log("false");
@@ -340,6 +372,7 @@ window.onload = () =>{
     function addListenersLetters(){
       for (let i = 0; i < letters.length; i++){
         letters[i].addEventListener('click', function(evt){
+          letters = document.getElementsByClassName("js--letter");
           if (hold == null) {
           camera.innerHTML += '<a-box id="js--hold" class="js--letter js--interact" color="'+ this.getAttribute("color") + '" height="1" width="1" rotation="0 180 0" position="2 -2 -4" depth="0.1">'+ this.innerHTML + '</a-box>'
           hold = "box";
@@ -371,13 +404,32 @@ window.onload = () =>{
           letter_counter += 1;
           if (letter_counter >= 5){
             let geplaatsteletters = document.getElementsByClassName("js--geplaatsteletter");
+            console.log(geplaatsteletters);
             let eerste = geplaatsteletters[0].childNodes[1].getAttribute("value");
-            let tweede = geplaatsteletters[1].childNodes[1].getAttribute("value");
-            let derde = geplaatsteletters[2].childNodes[1].getAttribute("value");
-            let vierde = geplaatsteletters[3].childNodes[1].getAttribute("value");
-            let vijfde = geplaatsteletters[4].childNodes[1].getAttribute("value");
+            let tweede = geplaatsteletters[1].childNodes[0].getAttribute("value");
+            let derde = geplaatsteletters[2].childNodes[0].getAttribute("value");
+            let vierde = geplaatsteletters[3].childNodes[0].getAttribute("value");
+            let vijfde = geplaatsteletters[4].childNodes[0].getAttribute("value");
             if (eerste == "N" && tweede == "A" && derde == "C" && vierde == "H" && vijfde == "T" ){
-              console.log("true");
+              let sos_scherm = document.createElement('a-box');
+              sos_scherm.setAttribute("height", "2.15");
+              sos_scherm.setAttribute("width", "3.4");
+              sos_scherm.setAttribute("depth", "0.1");
+              sos_scherm.setAttribute("position", "12.5 4.5 -19.5");
+              sos_scherm.innerHTML += '<a-text value="SOS" color="black" align="center" rotation="0 180 0" position="0 0.7 -0.11" width="10"></a-text><a-text value="HELP! HELP!" color="black" align="center" rotation="0 180 0" position="0 0.1 -0.11" width="10"></a-text><a-box id="js--knop_opnieuw" class="js--interact" color="#00fff0" height="0.5" width="1.5" depth="0.2" position="0.8 -0.7 0"><a-text value="Opnieuw proberen" color="black" align="center" rotation="0 180 0" position="0 0 -0.11" width="4"></a-text></a-box><a-box id="js--knop_stoppen" class="js--interact" color="#ec4646" height="0.5" width="1.5" depth="0.2" position="-0.8 -0.7 0" ><a-text value="Stoppen" color="black" align="center" rotation="0 180 0" position="0 0 -0.11" width="5"></a-text></a-box>';
+              scene.appendChild(sos_scherm);
+              //SOS tekst knoppen
+              let stop_knop = document.getElementById("js--knop_stoppen");
+              let opnieuw_knop = document.getElementById("js--knop_opnieuw");
+              //Stop knop (Deze sluit het venster)
+              stop_knop.addEventListener('click', function(evt){
+                window.close();
+              });
+              //Opnieuw proberen knop
+              opnieuw_knop.addEventListener('click', function(evt){
+                location.reload();
+              });
+              camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" width="0.4" height="0.13"><a-text value="Yes je hebt het gedaan nu kunnnen we eindelijk weg hier!" color="black" align="center" width="0.39" height="2"></a-text>';
             }
             else{
               letter_counter = 0;
@@ -394,7 +446,9 @@ window.onload = () =>{
           }
         }
       });
-    }
+    }    
+
+
     //Puzzel 3
     const notes = document.getElementsByClassName("js--note");
     let j = 0;
@@ -457,6 +511,17 @@ window.onload = () =>{
           note2.setAttribute("color", "lightgreen");
           note3.setAttribute("color", "lightgreen");
           sound_short_beep.components.sound.playSound();
+          let letter_t = document.createElement('a-box');
+          letter_t.setAttribute("class", "js--letter js--interact");
+          letter_t.setAttribute("color", "");
+          letter_t.setAttribute("height", "0.3");
+          letter_t.setAttribute("width", "0.3");
+          letter_t.setAttribute("depth", "0.2");
+          letter_t.setAttribute("position", "13.25 3.5 -18.6");
+          letter_t.innerHTML += '<a-text value="T" color="black" align="center" position="0 0 -0.11" rotation="0 -180 0" width="8"></a-text>';
+          scene.appendChild(letter_t);
+          letters = document.getElementsByClassName("js--letter");
+          addListenersLetters();
         }
 
       });
