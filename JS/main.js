@@ -275,132 +275,139 @@ window.onload = () =>{
 
 
     //hintsysteem component
-AFRAME.registerComponent("hints", {
-  init: function(){
+    AFRAME.registerComponent("hints", {
+      init: function(){
 
-    camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" width="0.4" height="0.13"><a-text value="Hallo, ik ben je collega en wij zijn hier gestrand, omdat jij bent gestruikeld. Los de puzzels op zodat je een SOS kan sturen via de computer. Als je me nodig hebt sta ik hier rechts naast je" color="black" align="center" width="0.39" height="2"></a-text>';
-    setTimeout(function(){
-      document.getElementById("js--tekst_paneel").remove();
-    }, 15000)
+        camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" width="0.4" height="0.13"><a-text value="Hallo, ik ben je collega en wij zijn hier gestrand, omdat jij bent gestruikeld. Los de puzzels op zodat je een SOS kan sturen via de computer. Als je me nodig hebt sta ik hier rechts naast je" color="black" align="center" width="0.39" height="2"></a-text>';
+        setTimeout(function(){
+          document.getElementById("js--tekst_paneel").remove();
+        }, 15000)
 
-    this.newHint = function(){
-      let z = camera.getAttribute("position").z;
-      //weetje
-      if(z == 0){
-        tekst = "Ongeveer 30% van alle 6000 talen op de wereld wordt gesproken in Afrika. Ter vergelijking: als het gaat om de wereldbevolking bevindt slechts 13% zich in Afrika."
-        breedte = 0.4
-        eerste_weetje_1 = true;
-      }
-      if(z == -12){
-        tekst = "Ik weet niet veel van geschriften, maar Berber is altijd en plus en de Egyptenaren konden goed tekenen."
-        breedte = 0.4
-      }
-      if(z == -22.8){
-        tekst = "Gebruik elke kleur 1x. En kijk goed naar de woorden onder de kleuren."
-        breedte = 0.4
-      }
-      if(z == -40.8){
-        tekst = ""
-        breedte = 0.4
-      }
-      if(z == -28){
-        tekst = "Luister goed naar de klanken die worden gesproken. Deze talen hebben veel unieke klanken."
-        breedte = 0.4
-      }
-      //weetje
-      if(z == -35){
-        tekst = "Je kent misschien meer Zulu (gesproken in Zuid-Afrika) dan je denkt. Dit is namelijk de taal van de beroemde openingszinnen uit The Lion King ‘Nants ingonyama bagithi Baba.’ Het betekent ‘Hier komt een leeuw, Vader.’"
-        breedte = 0.4
-      }
-      //weetje
-      if(z == -6){
-        tekst = "Toen het Nkore-Kiga (gesproken in Oeganda) het Engelse woord kitchen begon te gebruiken, wisselden de -k- en de -ch- van plaats. Daardoor gebruiken ze daar nu één woord, ongeveer uit te spreken als ‘tsjikèni’ voor zowel ‘keuken’ als ‘kip.’"
-        breedte = 0.4
-      }
-      camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" height="0.13" width="'+ breedte +'"><a-text value="'+ tekst +'" color="black" align="center" width="0.39" height="2"></a-text>';
-      setTimeout(function(){
-        document.getElementById("js--tekst_paneel").remove();
-      }, 8000)
-    }
-    this.el.addEventListener("click", this.newHint)
-  },
-  update: function() {
-    console.log("update");
-  },
-  tick: function() {},
-  remove: function() {},
-  pause: function() {},
-  play: function() {}
-})
+        this.newHint = function(){
+          let z = camera.getAttribute("position").z;
+          //weetje
+          if(z == 0){
+            tekst = "Ongeveer 30% van alle 6000 talen op de wereld wordt gesproken in Afrika. Ter vergelijking: als het gaat om de wereldbevolking bevindt slechts 13% zich in Afrika."
+            breedte = 0.4
+            eerste_weetje_1 = true;
+          }
+          if(z == -12){
+            tekst = "Ik weet niet veel van geschriften, maar Berber is altijd en plus en de Egyptenaren konden goed tekenen."
+            breedte = 0.4
+          }
+          if(z == -22.8){
+            tekst = "Gebruik elke kleur 1x. En kijk goed naar de woorden onder de kleuren."
+            breedte = 0.4
+          }
+          if(z == -40.8){
+            tekst = ""
+            breedte = 0.4
+          }
+          if(z == -28){
+            tekst = "Luister goed naar de klanken die worden gesproken. Deze talen hebben veel unieke klanken."
+            breedte = 0.4
+          }
+          //weetje
+          if(z == -35){
+            tekst = "Je kent misschien meer Zulu (gesproken in Zuid-Afrika) dan je denkt. Dit is namelijk de taal van de beroemde openingszinnen uit The Lion King ‘Nants ingonyama bagithi Baba.’ Het betekent ‘Hier komt een leeuw, Vader.’"
+            breedte = 0.4
+          }
+          //weetje
+          if(z == -6){
+            tekst = "Toen het Nkore-Kiga (gesproken in Oeganda) het Engelse woord kitchen begon te gebruiken, wisselden de -k- en de -ch- van plaats. Daardoor gebruiken ze daar nu één woord, ongeveer uit te spreken als ‘tsjikèni’ voor zowel ‘keuken’ als ‘kip.’"
+            breedte = 0.4
+          }
+          camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" height="0.13" width="'+ breedte +'"><a-text value="'+ tekst +'" color="black" align="center" width="0.39" height="2"></a-text>';
+          setTimeout(function(){
+            document.getElementById("js--tekst_paneel").remove();
+          }, 8000)
+        }
+        this.el.addEventListener("click", this.newHint)
+      },
+      update: function() {
+        console.log("update");
+      },
+      tick: function() {},
+      remove: function() {},
+      pause: function() {},
+      play: function() {}
+    })
+
+
+    //Puzzel 3
+    const notes = document.getElementsByClassName("js--note");
+    let j = 0;
+    let parts = new Array(3);
+    let movedNote = new Array(3);
+    let note1;
+    let note2;
+    let note3;
+    let reset = 0;
+    let awns = ["eta", "dilo", "ogung"];
+
+    for(let i=0; i < notes.length; i++){
+      notes[i].addEventListener('click', function(evt){
+
+        let curentNoteText = notes[i].children;
+        console.log(curentNoteText[0].getAttribute("value"));
+
+        //zijn er minder dan 4 notes verplaatst dan word de value van de child opgeslagen
+        if(j < 3){
+          parts[j] = curentNoteText[0].getAttribute("value");
+        }
+
+
+        switch (j) {
+          case 0:
+            movedNote[0] = notes[i].getAttribute("position");
+            console.log(movedNote[0]);
+            notes[i].setAttribute("position", "1.01 1.2 0.25");
+            console.log(movedNote[0]);
+            note1 = notes[i]
+            j++;
+            break;
+          case 1:
+            movedNote[1] = notes[i].getAttribute("position");
+            notes[i].setAttribute("position", "1.01 1.2 -0.2");
+            note2 = notes[i]
+            j++;
+            break;
+          case 2:
+            movedNote[2] = notes[i].getAttribute("position");
+            notes[i].setAttribute("position", "1.01 1.2 -0.65");
+            note3 = notes[i]
+            j++;
+            break;
+        }
+
+        console.log(movedNote);
+        if(reset == 1){
+
+        }
+
+        console.log(parts);
+
+
+
+        //winconditie
+        if(parts[0] == "eta" && parts[1] == "dilo" && parts[2] == "ogung"){
+          console.log("correct");
+          note1.setAttribute("color", "lightgreen");
+          note2.setAttribute("color", "lightgreen");
+          note3.setAttribute("color", "lightgreen");
+          sound_short_beep.components.sound.playSound();
+        }
+
+    });
+}
+
+
 }
 
 
 
 
 
-      const notes = document.getElementsByClassName("js--note");
-      let j = 0;
-      let parts = new Array(3);
-      let movedNote = new Array(3);
-      let note1;
-      let note2;
-      let note3;
-      let reset = 0;
-      let awns = ["eta", "dilo", "ogung"];
 
-      for(let i=0; i < notes.length; i++){
-        notes[i].addEventListener('click', function(evt){
-
-          let curentNoteText = notes[i].children;
-          console.log(curentNoteText[0].getAttribute("value"));
-
-//zijn er minder dan 4 notes verplaatst dan word de value van de child opgeslagen
-          if(j < 3){
-            parts[j] = curentNoteText[0].getAttribute("value");
-          }
-
-
-          switch (j) {
-            case 0:
-              movedNote[0] = notes[i].getAttribute("position");
-              console.log(movedNote[0]);
-              notes[i].setAttribute("position", "1.01 1.2 0.25");
-              console.log(movedNote[0]);
-              note1 = notes[i]
-              j++;
-              break;
-            case 1:
-              movedNote[1] = notes[i].getAttribute("position");
-              notes[i].setAttribute("position", "1.01 1.2 -0.2");
-              note2 = notes[i]
-              j++;
-              break;
-            case 2:
-              movedNote[2] = notes[i].getAttribute("position");
-              notes[i].setAttribute("position", "1.01 1.2 -0.65");
-              note3 = notes[i]
-              j++;
-              break;
-          }
-
-          console.log(movedNote);
-          if(reset == 1){
-
-          }
-
-          console.log(parts);
-
-
-
-//winconditie
-          if(parts[0] == "eta" && parts[1] == "dilo" && parts[2] == "ogung"){
-            console.log("correct");
-            note1.setAttribute("color", "lightgreen");
-            note2.setAttribute("color", "lightgreen");
-            note3.setAttribute("color", "lightgreen");
-          }
-
-      });
-  }
 
 
