@@ -278,7 +278,7 @@ window.onload = () =>{
 AFRAME.registerComponent("hints", {
   init: function(){
 
-    camera.innerHTML += '<a-plane id="js--tekst_paneel" position="3.6 2.7 -4" width="4"><a-text value="Hallo, ik ben je collega en wij zijn hier gestrand, omdat jij bent gestruikeld. Los de puzzels op zodat je een SOS kan sturen via de computer. Als je me nodig hebt sta ik hier rechts naast je" color="black" align="center" width="3.5" height="2"></a-text>';
+    camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" width="0.4" height="0.13"><a-text value="Hallo, ik ben je collega en wij zijn hier gestrand, omdat jij bent gestruikeld. Los de puzzels op zodat je een SOS kan sturen via de computer. Als je me nodig hebt sta ik hier rechts naast je" color="black" align="center" width="0.39" height="2"></a-text>';
     setTimeout(function(){
       document.getElementById("js--tekst_paneel").remove();
     }, 10000)
@@ -288,36 +288,36 @@ AFRAME.registerComponent("hints", {
       //weetje
       if(z == 0){
         tekst = "Ongeveer 30% van alle 6000 talen op de wereld wordt gesproken in Afrika. Ter vergelijking: als het gaat om de wereldbevolking bevindt slechts 13% zich in Afrika."
-        breedte = 4;
+        breedte = 0.4
         eerste_weetje_1 = true;
       }
       if(z == -12){
         tekst = "Ik weet niet veel van geschriften, maar Berber is altijd en plus en de Egyptenaren konden goed tekenen."
-        breedte = 4
+        breedte = 0.4
       }
       if(z == -22.8){
         tekst = "Gebruik elke kleur 1x. En kijk goed naar de woorden onder de kleuren."
-        breedte = 4
+        breedte = 0.4
       }
       if(z == -40.8){
         tekst = ""
-        breedte = 4
+        breedte = 0.4
       }
       if(z == -28){
         tekst = "Luister goed naar de klanken die worden gesproken. Deze talen hebben veel unieke klanken."
-        breedte = 4
+        breedte = 0.4
       }
       //weetje
       if(z == -35){
         tekst = "Je kent misschien meer Zulu (gesproken in Zuid-Afrika) dan je denkt. Dit is namelijk de taal van de beroemde openingszinnen uit The Lion King ‘Nants ingonyama bagithi Baba.’ Het betekent ‘Hier komt een leeuw, Vader.’"
-        breedte = 4
+        breedte = 0.4
       }
       //weetje
       if(z == -6){
         tekst = "Toen het Nkore-Kiga (gesproken in Oeganda) het Engelse woord kitchen begon te gebruiken, wisselden de -k- en de -ch- van plaats. Daardoor gebruiken ze daar nu één woord, ongeveer uit te spreken als ‘tsjikèni’ voor zowel ‘keuken’ als ‘kip.’"
-        breedte = 4
+        breedte = 0.4
       }
-      camera.innerHTML += '<a-plane id="js--tekst_paneel" position="3.6 2.7 -4" width="'+ breedte +'"><a-text value="'+ tekst +'" color="black" align="center" width="3.5" height="2"></a-text>';
+      camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" height="0.13" width="'+ breedte +'"><a-text value="'+ tekst +'" color="black" align="center" width="0.39" height="2"></a-text>';
       setTimeout(function(){
         document.getElementById("js--tekst_paneel").remove();
       }, 8000)
