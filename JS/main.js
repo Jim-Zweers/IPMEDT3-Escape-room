@@ -281,7 +281,7 @@ AFRAME.registerComponent("hints", {
     camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" width="0.4" height="0.13"><a-text value="Hallo, ik ben je collega en wij zijn hier gestrand, omdat jij bent gestruikeld. Los de puzzels op zodat je een SOS kan sturen via de computer. Als je me nodig hebt sta ik hier rechts naast je" color="black" align="center" width="0.39" height="2"></a-text>';
     setTimeout(function(){
       document.getElementById("js--tekst_paneel").remove();
-    }, 10000)
+    }, 15000)
 
     this.newHint = function(){
       let z = camera.getAttribute("position").z;
