@@ -260,6 +260,7 @@ window.onload = () =>{
                             fragmenten[i].setAttribute("color", "#00af91");
                           }, 1000)
                         }
+                        lijne_array = [];
                       }
                     }
                 }
