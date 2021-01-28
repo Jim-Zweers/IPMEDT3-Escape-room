@@ -21,7 +21,8 @@ window.onload = () =>{
     let y = null;
     let lijne_array = [];
     let tekst = null;
-    let breedte = null;
+    let hoogte = null;
+    let pos = 0.48;
 
     const ewe_sound_1 = document.getElementById("js--ewe_sound_1");
     const sound_short_beep = document.getElementById("js--sound_short_beep");
@@ -335,41 +336,84 @@ window.onload = () =>{
         this.newHint = function(){
           let z = camera.getAttribute("position").z;
           //weetje
-          if(z == 0){
-            tekst = "Ongeveer 30% van alle 6000 talen op de wereld wordt gesproken in Afrika. Ter vergelijking: als het gaat om de wereldbevolking bevindt slechts 13% zich in Afrika."
-            breedte = 0.4
-            eerste_weetje_1 = true;
+          if(z == 0 || z == -35 || z == -6){
+            let randomNumb = Math.floor(Math.random() * 10 + 2);
+            if(randomNumb == 1){
+              tekst = "Ongeveer 30% van alle 6000 talen op de wereld wordt gesproken in Afrika. Ter vergelijking: als het gaat om de wereldbevolking bevindt slechts 13% zich in Afrika."
+              hoogte = 0.13
+              pos = 0.33
+            }
+            if(randomNumb == 2){
+              tekst = "Je kent misschien meer Zulu (gesproken in Zuid-Afrika) dan je denkt. Dit is namelijk de taal van de beroemde openingszinnen uit The Lion King ‘Nants ingonyama bagithi Baba.’ Het betekent ‘Hier komt een leeuw, Vader.’"
+              hoogte = 0.13
+              pos = 0.33
+            }
+            if(randomNumb == 3){
+              tekst = "Toen het Nkore-Kiga (gesproken in Oeganda) het Engelse woord kitchen begon te gebruiken, wisselden de -k- en de -ch- van plaats. Daardoor gebruiken ze daar nu één woord, ongeveer uit te spreken als ‘tsjikèni’ voor zowel ‘keuken’ als ‘kip.’"
+             hoogte = 0.13
+             pos = 0.33
+            }
+            if(randomNumb == 4){
+              tekst = "In het Nkore-Kiga (gesproken in Oeganda) kun je een vraagzin niet herkennen aan een stijgende toonhoogte op het einde van de zin, zoals in het Nederlands. Sprekers van deze taal doen dat door de laatste lettergreep van de vraagzin te fluisteren!"
+              hoogte = 0.13
+              pos = 0.33
+            }
+            if(randomNumb == 5){
+              tekst = "Wij zijn gewend dat een taal slechts één naam heeft, hoogstens twee. Het Nederlands kun je bijvoorbeeld ook het Hollands noemen, maar ‘Nederlands’ hoor je duidelijk vaker. In veel talen op de wereld, en ook zeker in Afrika, gaan ze wel een stapje verder. Bijvoorbeeld het Wolaytta (gesproken in Ethiopië) heeft wel 15 andere namen! Deze taal wordt ook aangeduid als het Borodda, het Ometo, het Uba... "
+              hoogte = 0.18
+              pos = 0.305
+            }
+            if(randomNumb == 6){
+              tekst = "Een hoge of lage toon kan het verschil maken tussen twee verschillende woorden, zoals bùkù ‘onderdeel’ (lage tonen) versus búkú ‘boek’ (hoge tonen) in het Teke-Kukuya. Dit noemen we een lexicale functie van toon. Toon kan ook een grammaticale functie hebben, bijvoorbeeld als het onderscheid maakt tussen vervoegingen, zoals in het Pagibete (gesproken in de Democratische Republiek Congo)."
+              hoogte = 0.18
+              pos = 0.305
+            }
+            if(randomNumb == 7){
+              tekst = "In het Ewe (Togo en Ghana) kun je de /k/ en de /p/ tegelijkertijd uitspreken. Dat heet ‘dubbele articulatie.’ Je zet je tong op de positie alsof je een /k/ gaat maken, maar voordat je dat doet, zet je ook je lippen op elkaar alsof je de /p/ gaat maken. Hetzelfde kan voor de /g/ en de /b/ samen. Dit is een zogenaamde areal feature, wat betekent dat het in meerdere talen voorkomt die in die regio worden gesproken."
+              hoogte = 0.18
+              pos = 0.305
+            }
+            if(randomNumb == 8){
+              tekst = "Het Egyptisch Arabisch (Egypte) heeft zogenoemde ‘uvulaire stops,’ die heel herkenbaar zijn aan Arabische talen. Ze klinken eigenlijk alsof er iets vastzit in je keel."
+              hoogte = 0.13
+              pos = 0.33
+            }
+            if(randomNumb == 9){
+              tekst = "Het Tashylhiyt Berber (Marokko) heeft medeklinkers op de nucleaire positie in de lettergreep. Dat houdt het volgende in: waar het Nederlands eigenlijk altijd wel een klinker nodig heeft in een woord, zoals ‘kat’ of ‘bar,’ is dat in het Tashylhiyt Berber niet altijd nodig. In zekere zin klinkt het dan alsof een woord alleen maar bestaan uit medeklinkers!"
+              hoogte = 0.18
+              pos = 0.305
+            }
+            if(randomNumb == 10){
+              tekst = "Een unieke klank voor het Changana is wat geschreven wordt als /sv/ en bijna klinkt als een fluitje. In het eerste fragment hoor je ‘lesvi’ (dit) en ‘lesvaku’ (dat). Je maakt deze klank door met een gekrulde tong een ‘s’ te maken, met je lippen rond als een een ‘o’."
+              hoogte = 0.18
+              pos = 0.305
+            }
           }
+          //hints
           if(z == -12){
             tekst = "Ik weet niet veel van geschriften, maar Berber is altijd en plus en de Egyptenaren konden goed tekenen."
-            breedte = 0.4
+            hoogte = 0.13
+            pos = 0.33
           }
           if(z == -22.8){
             tekst = "Gebruik elke kleur 1x. En kijk goed naar de woorden onder de kleuren."
-            breedte = 0.4
+            hoogte = 0.13
+            pos = 0.33
           }
           if(z == -40.8){
             tekst = "In het Frans tel je op, maar hier trek je af. PS kijk even goed naar 20 en 16."
-            breedte = 0.4
+            hoogte = 0.13
+            pos = 0.33
           }
           if(z == -28){
             tekst = "Luister goed naar de klanken die worden gesproken. Deze talen hebben veel unieke klanken."
-            breedte = 0.4
+            hoogte = 0.13
+            pos = 0.33
           }
-          //weetje
-          if(z == -35){
-            tekst = "Je kent misschien meer Zulu (gesproken in Zuid-Afrika) dan je denkt. Dit is namelijk de taal van de beroemde openingszinnen uit The Lion King ‘Nants ingonyama bagithi Baba.’ Het betekent ‘Hier komt een leeuw, Vader.’"
-            breedte = 0.4
-          }
-          //weetje
-          if(z == -6){
-            tekst = "Toen het Nkore-Kiga (gesproken in Oeganda) het Engelse woord kitchen begon te gebruiken, wisselden de -k- en de -ch- van plaats. Daardoor gebruiken ze daar nu één woord, ongeveer uit te spreken als ‘tsjikèni’ voor zowel ‘keuken’ als ‘kip.’"
-            breedte = 0.4
-          }
-          camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" height="0.13" width="'+ breedte +'"><a-text value="'+ tekst +'" color="black" align="center" width="0.39" height="2"></a-text>';
+          camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 '+ pos +' -0.5" height="'+ hoogte +'" width="0.4"><a-text value="'+ tekst +'" color="black" align="center" width="0.39" height="2"></a-text>';
           setTimeout(function(){
             document.getElementById("js--tekst_paneel").remove();
-          }, 8000)
+          }, 10000)
         }
         this.el.addEventListener("click", this.newHint)
       },
