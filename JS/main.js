@@ -336,7 +336,7 @@ window.onload = () =>{
         this.newHint = function(){
           let z = camera.getAttribute("position").z;
           //weetje
-          if(z == 0 || z == -35 || z == -6){
+          if(z == 0 || z == -35 || z == -6 || z == -20){
             let randomNumb = Math.floor(Math.random() * 10 + 2);
             if(randomNumb == 1){
               tekst = "Ongeveer 30% van alle 6000 talen op de wereld wordt gesproken in Afrika. Ter vergelijking: als het gaat om de wereldbevolking bevindt slechts 13% zich in Afrika."
