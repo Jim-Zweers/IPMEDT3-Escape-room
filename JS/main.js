@@ -323,7 +323,6 @@ window.onload = () =>{
     } 
   
     addListenersFragmenten() 
-    
       const notes = document.getElementsByClassName("js--note");
       let j = 0;
       let parts = new Array(3);
@@ -415,6 +414,18 @@ window.onload = () =>{
                 note1.setAttribute("color", "lightgreen");
                 note2.setAttribute("color", "lightgreen");
                 note3.setAttribute("color", "lightgreen");
+                sound_short_beep.components.sound.playSound();
+                let letter_t = document.createElement('a-box');
+                letter_t.setAttribute("class", "js--letter js--interact");
+                letter_t.setAttribute("color", "");
+                letter_t.setAttribute("height", "0.3");
+                letter_t.setAttribute("width", "0.3");
+                letter_t.setAttribute("depth", "0.2");
+                letter_t.setAttribute("position", "13.25 3.5 -18.6");
+                letter_t.innerHTML += '<a-text value="T" color="black" align="center" position="0 0 -0.11" rotation="0 -180 0" width="8"></a-text>';
+                scene.appendChild(letter_t);
+                letters = document.getElementsByClassName("js--letter");
+                addListenersLetters();
                 win = 1;
               }
             }
@@ -603,63 +614,6 @@ window.onload = () =>{
         }
       });
     }    
-
-
-    //Puzzel 3
-    const notes = document.getElementsByClassName("js--note");
-    let j = 0;
-    let parts = new Array(3);
-    let movedNote = new Array(3);
-    let note1;
-    let note2;
-    let note3;
-    let reset = 0;
-    let awns = ["eta", "dilo", "ogung"];
-
-    for(let i=0; i < notes.length; i++){
-      notes[i].addEventListener('click', function(evt){
-
-        let curentNoteText = notes[i].children;
-        console.log(curentNoteText[0].getAttribute("value"));
-
-        //zijn er minder dan 4 notes verplaatst dan word de value van de child opgeslagen
-        if(j < 3){
-          parts[j] = curentNoteText[0].getAttribute("value");
-        }
-
-
-        switch (j) {
-          case 0:
-            movedNote[0] = notes[i].getAttribute("position");
-            console.log(movedNote[0]);
-            notes[i].setAttribute("position", "1.01 1.2 0.25");
-            console.log(movedNote[0]);
-            note1 = notes[i]
-            j++;
-            break;
-          case 1:
-            movedNote[1] = notes[i].getAttribute("position");
-            notes[i].setAttribute("position", "1.01 1.2 -0.2");
-            note2 = notes[i]
-            j++;
-            break;
-          case 2:
-            movedNote[2] = notes[i].getAttribute("position");
-            notes[i].setAttribute("position", "1.01 1.2 -0.65");
-            note3 = notes[i]
-            j++;
-            break;
-        }
-
-        console.log(movedNote);
-        if(reset == 1){
-
-        }
-
-        console.log(parts);
-
-      });
-    }
 
 
 
