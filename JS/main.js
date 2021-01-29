@@ -626,9 +626,9 @@ window.onload = () =>{
 
   const tvScreen = document.getElementById('js--screen');
 
-  panna.volume = 0.05;
-  ojuelegba.volume = 0.05;
-  davido.volume = 0.05;
+  panna.volume = 0.015;
+  ojuelegba.volume = 0.015;
+  davido.volume = 0.015;
 
   song1 = () =>{
     if(mute == 1){
