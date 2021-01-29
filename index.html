@@ -29,15 +29,17 @@
             ></a-entity>
         </a-camera>
 
+        <a-sky src="IMG/omgeving.jpg" rotation="-40 -60 -15"></a-sky>
+
         <a-obj-model src="#whiteboard-obj" mtl="#whiteboard-mtl" position="13 -8 -44.3" rotation="0 -90 0" scale="4 4 4"></a-obj-model>
 
         <a-obj-model src="#laptop-obj" mtl="#laptop-mtl" position="12.5 2.85 -20" rotation="0 -90 0" scale="11 11 11"></a-obj-model>
 
         <a-gltf-model src="BLENDER_FILES/koelkast.glb" position="-3 -5 -40.8" scale="3.3 3.3 3.3">
-          <a-image position="1.01 4.4 0" rotation="0 90 5" width="1.2" height="0.8" src="IMG/numbers_example.png"></a-image>
+          <a-image position="1.01 4.4 0.1" rotation="0 90 5" width="1.2" height="0.8" src="IMG/numbers_example.png"></a-image>
           <a-image position="-0.5 3.2 0" rotation="0 90 5" width="0.5" height="0.5" src="IMG/potato.png"></a-image>
 
-          <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 3.35 0.5" rotation="0 90 0" color="yellow">
+          <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 3.35 0.6" rotation="0 90 0" color="yellow">
             <a-text value="eni" id="js--text" scale="0.8 0.8" position="-0.13 0 0" color="black"></a-text>
           </a-plane>
           <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 2.9 0.5" rotation="0 90 0" color="yellow">
@@ -46,11 +48,11 @@
           <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 2.45 0.5" rotation="0 90 0" color="yellow">
             <a-text value="eta" scale="0.8 0.8" position="-0.13 0 0" color="black"></a-text>
           </a-plane>
-          <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 2 0.5" rotation="0 90 0" color="yellow">
-            <a-text value="ering" scale="0.8 0.8" position="0 0 0" color="black"></a-text>
+          <a-plane class="js--note js--interact" height="0.4" width="0.6" position="1.01 2 0.55" rotation="0 90 0" color="yellow">
+            <a-text value="ering" scale="0.8 0.8" position="-0.22 0 0" color="black"></a-text>
           </a-plane>
-          <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 3.35 0" rotation="0 90 0" color="yellow">
-            <a-text value="arong" scale="0.8 0.8" position="0 0 0" color="black"></a-text>
+          <a-plane class="js--note js--interact" height="0.4" width="0.6" position="1.01 3.35 0.05" rotation="0 90 0" color="yellow">
+            <a-text value="arong" scale="0.8 0.8" position="-0.25 0 0" color="black"></a-text>
           </a-plane>
           <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 2.9 0" rotation="0 90 0" color="yellow">
             <a-text value="efa" scale="0.8 0.8" position="-0.13 0 0" color="black"></a-text>
@@ -61,24 +63,32 @@
           <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 2 0" rotation="0 90 0" color="yellow">
             <a-text value="ejo" scale="0.8 0.8" position="-0.13 0 0" color="black"></a-text>
           </a-plane>
-          <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 3.35 -0.5" rotation="0 90 0" color="yellow">
-            <a-text value="esang" scale="0.8 0.8" position="0 0 0" color="black"></a-text>
+          <a-plane class="js--note js--interact" height="0.4" width="0.6" position="1.01 3.35 -0.6" rotation="0 90 0" color="yellow">
+            <a-text value="esang" scale="0.8 0.8" position="-0.25 0 0" color="black"></a-text>
           </a-plane>
           <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 2.9 -0.5" rotation="0 90 0" color="yellow">
             <a-text value="ewa" scale="0.8 0.8" position="-0.17 0 0" color="black"></a-text>
           </a-plane>
-          <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 2.45 -0.5" rotation="0 90 0" color="yellow">
-            <a-text value="ogung" scale="0.8 0.8" position="0 0 0" color="black"></a-text>
+          <a-plane class="js--note js--interact" height="0.4" width="0.6" position="1.01 2.45 -0.55" rotation="0 90 0" color="yellow">
+            <a-text value="ogung" scale="0.8 0.8" position="-0.25 0 0" color="black"></a-text>
           </a-plane>
           <a-plane class="js--note js--interact" height="0.4" width="0.4" position="1.01 2 -0.5" rotation="0 90 0" color="yellow">
-            <a-text value="dilo" scale="0.8 0.8" position="0 0 0" color="black"></a-text>
+            <a-text value="dil" scale="0.8 0.8" position="-0.13 0 0" color="black"></a-text>
           </a-plane>
 
-          <a-plane height="0.4" width="0.4" position="1.01 1.2 0.7" rotation="0 90 0" color="yellow">
+          <a-plane height="0.4" width="0.4" position="1.01 1.2 0.8" rotation="0 90 0" color="yellow">
             <a-text value="17." scale="0.8 0.8" position="-0.14 0 0" color="black"></a-text>
           </a-plane>
 
+          <a-plane class="js--note js--interact" height="0.4" width="0.6" position="1.015 4 -0.65" rotation="0 90 0" color="red">
+            <a-text value="reset" scale="0.8 0.8" position="-0.22 0 0" color="black"></a-text>
+          </a-plane>
+
         </a-gltf-model>
+
+        <a-plane  height="16.5" width="5" position="24.7 5.5 -20" rotation="0 -90 0" color="white">
+          <a-text id="js--screen" value="" scale="0.65 0.65" position="-1.9 0 0.1" color="black"></a-text>
+        </a-plane>
 
         <a-box height="0" width="5" depth="30" position="-4 1.8 -22.5" color="#3d2d20"></a-box>
         <a-cylinder position="-3.6 -1.8 -8.6" height="8" width="0.5" color="#808080"></a-cylinder>
@@ -94,6 +104,7 @@
         <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="12.5 -3 -28"></a-cylinder>
         <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="20 -3 -35"></a-cylinder>
         <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="20 -3 -6"></a-cylinder>
+        <a-cylinder class="js--place js--interact" color="#A9A9A9" height="0.5" radius="1.75" position="20 -3 -20"></a-cylinder>
     </a-scene>
 </body>
 </html>

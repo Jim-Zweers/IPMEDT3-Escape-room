@@ -31,55 +31,136 @@ window.onload = () =>{
         notes[i].addEventListener('click', function(evt){
 
           let curentNoteText = notes[i].children;
-          console.log(curentNoteText[0].getAttribute("value"));
 
-//zijn er minder dan 4 notes verplaatst dan word de value van de child opgeslagen
-          if(j < 3){
-            parts[j] = curentNoteText[0].getAttribute("value");
+          if(curentNoteText[0].getAttribute("value") == "reset"){
+            j = 0;
+            note1.setAttribute("position", movedNote[0]);
+            parts[0] = "";
+            note2.setAttribute("position", movedNote[1]);
+            parts[1] = "";
+            note3.setAttribute("position", movedNote[2]);
+            parts[2] = "";
+          }else{
+            console.log(curentNoteText[0].getAttribute("value"));
+
+  //zijn er minder dan 4 notes verplaatst dan word de value van de child opgeslagen
+            if(j < 3){
+              parts[j] = curentNoteText[0].getAttribute("value");
+            }
+
+
+  //zet de attribute om naar een string
+            let notePositionTemp = notes[i].getAttribute("position");
+            let posX = notePositionTemp.x;
+            let posY = notePositionTemp.y;
+            let posZ = notePositionTemp.z;
+
+            let notePositionTempString = `${posX}, ${posY}, ${posZ}`;
+
+
+  //verplaats de note en geeft de oude positie (opgeslagen in notePositonTempString) mee als variabele in een array,
+  //ga dan door naar de volgende note
+            switch (j) {
+              case 0:
+                movedNote[0] = notePositionTempString;
+                notes[i].setAttribute("position", "1.01 1.2 0.3");
+                note1 = notes[i]
+                j++;
+                break;
+              case 1:
+                movedNote[1] = notePositionTempString;
+                notes[i].setAttribute("position", "1.01 1.2 -0.2");
+                note2 = notes[i]
+                j++;
+                break;
+              case 2:
+                movedNote[2] = notePositionTempString;
+                notes[i].setAttribute("position", "1.01 1.2 -0.7");
+                note3 = notes[i]
+                console.log(movedNote);
+                j++;
+                break;
+            }
+
+            console.log(parts);
+
+
+
+  //winconditie
+            if(parts[0] == "eta" && parts[1] == "dilo" && parts[2] == "ogung"){
+              console.log("correct");
+              note1.setAttribute("color", "lightgreen");
+              note2.setAttribute("color", "lightgreen");
+              note3.setAttribute("color", "lightgreen");
+            }
           }
 
 
-          switch (j) {
-            case 0:
-              movedNote[0] = notes[i].getAttribute("position");
-              console.log(movedNote[0]);
-              notes[i].setAttribute("position", "1.01 1.2 0.25");
-              console.log(movedNote[0]);
-              note1 = notes[i]
-              j++;
-              break;
-            case 1:
-              movedNote[1] = notes[i].getAttribute("position");
-              notes[i].setAttribute("position", "1.01 1.2 -0.2");
-              note2 = notes[i]
-              j++;
-              break;
-            case 2:
-              movedNote[2] = notes[i].getAttribute("position");
-              notes[i].setAttribute("position", "1.01 1.2 -0.65");
-              note3 = notes[i]
-              j++;
-              break;
-          }
-
-          console.log(movedNote);
-          if(reset == 1){
-
-          }
-
-          console.log(parts);
-
-
-
-//winconditie
-          if(parts[0] == "eta" && parts[1] == "dilo" && parts[2] == "ogung"){
-            console.log("correct");
-            note1.setAttribute("color", "lightgreen");
-            note2.setAttribute("color", "lightgreen");
-            note3.setAttribute("color", "lightgreen");
-          }
 
       });
     }
+
+
+
+//lyrics api
+  let lyricsOut
+  let panna = new Audio("MUSIC/panna.mp3");
+  let ojuelegba = new Audio("MUSIC/OJUELEGBA.mp3");
+  let davido = new Audio("MUSIC/Davido.mp3");
+  let k = 0;
+
+
+  panna.volume = 0.05;
+  ojuelegba.volume = 0.05;
+  davido.volume = 0.05;
+
+  panna.playbackRate = 10;
+
+  panna.play();
+  const tvScreen = document.getElementById('js--screen');
+
+  fetch("https://mourits-lyrics.p.rapidapi.com/?artist=Tekno&song=Pana", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "3330f0822fmsh2ccb48c37d49d5ap1a7e16jsn0a53b28e0b72",
+      "x-rapidapi-host": "mourits-lyrics.p.rapidapi.com"
+    }
+  })
+  .then(res => res.json())
+  .then(data => tvScreen.setAttribute("value", data.result.lyrics))
+  .catch(err => {
+    console.error(err);
+  });
+
+
+  ojuelegba.play();
+
+  fetch("https://mourits-lyrics.p.rapidapi.com/?artist=WIZKID&song=OJUELEGBA", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "3330f0822fmsh2ccb48c37d49d5ap1a7e16jsn0a53b28e0b72",
+      "x-rapidapi-host": "mourits-lyrics.p.rapidapi.com"
+    }
+  })
+  .then(res => res.json())
+  .then(data => tvScreen.setAttribute("value", data.result.lyrics))
+  .catch(err => {
+    console.error(err);
+  });
+
+  davido.play();
+
+  fetch("https://mourits-lyrics.p.rapidapi.com/?artist=Aye&song=Davido", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "3330f0822fmsh2ccb48c37d49d5ap1a7e16jsn0a53b28e0b72",
+      "x-rapidapi-host": "mourits-lyrics.p.rapidapi.com"
+    }
+  })
+  .then(res => res.json())
+  .then(data => tvScreen.setAttribute("value", data.result.lyrics))
+  .catch(err => {
+    console.error(err);
+  });
 
 }
