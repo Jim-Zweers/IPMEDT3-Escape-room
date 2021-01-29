@@ -109,58 +109,71 @@ window.onload = () =>{
   let davido = new Audio("MUSIC/Davido.mp3");
   let k = 0;
 
+  const tvScreen = document.getElementById('js--screen');
 
   panna.volume = 0.05;
   ojuelegba.volume = 0.05;
   davido.volume = 0.05;
 
-  panna.playbackRate = 10;
-
-  panna.play();
-  const tvScreen = document.getElementById('js--screen');
-
-  fetch("https://mourits-lyrics.p.rapidapi.com/?artist=Tekno&song=Pana", {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-key": "3330f0822fmsh2ccb48c37d49d5ap1a7e16jsn0a53b28e0b72",
-      "x-rapidapi-host": "mourits-lyrics.p.rapidapi.com"
-    }
-  })
-  .then(res => res.json())
-  .then(data => tvScreen.setAttribute("value", data.result.lyrics))
-  .catch(err => {
-    console.error(err);
-  });
+  song1 = () =>{
+    panna.play();
 
 
-  ojuelegba.play();
+    fetch("https://mourits-lyrics.p.rapidapi.com/?artist=Tekno&song=Pana", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": "d8a7ef3e70msh5779fbd5d45e001p1f628bjsn81208be9a73e",
+        "x-rapidapi-host": "mourits-lyrics.p.rapidapi.com"
+      }
+    })
+    .then(res => res.json())
+    .then(data => tvScreen.setAttribute("value", data.result.lyrics))
+    .catch(err => {
+      console.error(err);
+    });
 
-  fetch("https://mourits-lyrics.p.rapidapi.com/?artist=WIZKID&song=OJUELEGBA", {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-key": "3330f0822fmsh2ccb48c37d49d5ap1a7e16jsn0a53b28e0b72",
-      "x-rapidapi-host": "mourits-lyrics.p.rapidapi.com"
-    }
-  })
-  .then(res => res.json())
-  .then(data => tvScreen.setAttribute("value", data.result.lyrics))
-  .catch(err => {
-    console.error(err);
-  });
+    setTimeout(song2, 255000)
 
-  davido.play();
+  }
 
-  fetch("https://mourits-lyrics.p.rapidapi.com/?artist=Aye&song=Davido", {
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-key": "3330f0822fmsh2ccb48c37d49d5ap1a7e16jsn0a53b28e0b72",
-      "x-rapidapi-host": "mourits-lyrics.p.rapidapi.com"
-    }
-  })
-  .then(res => res.json())
-  .then(data => tvScreen.setAttribute("value", data.result.lyrics))
-  .catch(err => {
-    console.error(err);
-  });
+  song2 = () =>{
+    ojuelegba.play();
+
+    fetch("https://mourits-lyrics.p.rapidapi.com/?artist=WIZKID&song=OJUELEGBA", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": "d8a7ef3e70msh5779fbd5d45e001p1f628bjsn81208be9a73e",
+        "x-rapidapi-host": "mourits-lyrics.p.rapidapi.com"
+      }
+    })
+    .then(res => res.json())
+    .then(data => tvScreen.setAttribute("value", data.result.lyrics))
+    .catch(err => {
+      console.error(err);
+    });
+
+    setTimeout(song3, 225000)
+  }
+
+  song3 = () =>{
+    davido.play();
+
+    fetch("https://mourits-lyrics.p.rapidapi.com/?artist=Aye&song=Davido", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-key": "d8a7ef3e70msh5779fbd5d45e001p1f628bjsn81208be9a73e",
+        "x-rapidapi-host": "mourits-lyrics.p.rapidapi.com"
+      }
+    })
+    .then(res => res.json())
+    .then(data => tvScreen.setAttribute("value", data.result.lyrics))
+    .catch(err => {
+      console.error(err);
+    });
+
+    setTimeout(song1, 253000)
+  }
+
+  song1();
 
 }
