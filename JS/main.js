@@ -331,7 +331,7 @@ window.onload = () =>{
         camera.innerHTML += '<a-plane id="js--tekst_paneel" position="0.48 0.33 -0.5" width="0.4" height="0.13"><a-text value="Hallo, ik ben je buddy en wij zijn hier gestrand, omdat jij bent gestruikeld. Los de puzzels op zodat je een SOS kan sturen via de computer. Als je me nodig hebt sta ik hier rechts naast je. Owwhh ja en als je wilt lopen moet je even kijken naar de rondjes op de grond. Om iets op te pakken moet je er ook naar kijken" color="black" align="center" width="0.37" height="2"></a-text>';
         setTimeout(function(){
           document.getElementById("js--tekst_paneel").remove();
-        }, 15000)
+        }, 20000)
 
         this.newHint = function(){
           let z = camera.getAttribute("position").z;
@@ -390,7 +390,7 @@ window.onload = () =>{
             }
           }
           //hints
-          if(z == -12){
+          if(z == -12 || z == -7.5){
             tekst = "Ik weet niet veel van geschriften, maar Berber is altijd en plus en de Egyptenaren konden goed tekenen."
             hoogte = 0.13
             pos = 0.33
