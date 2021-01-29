@@ -323,6 +323,7 @@ window.onload = () =>{
     } 
   
     addListenersFragmenten() 
+    
       const notes = document.getElementsByClassName("js--note");
       let j = 0;
       let parts = new Array(3);
@@ -418,8 +419,8 @@ window.onload = () =>{
               }
             }
           }
-
-
+        });
+      }
 
     //hintsysteem component
     AFRAME.registerComponent("hints", {
@@ -769,6 +770,7 @@ window.onload = () =>{
   song1();
 
 }
+      
 
 
 
